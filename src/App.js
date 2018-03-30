@@ -62,7 +62,7 @@ class App extends Component {
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+    this.state.value
     event.preventDefault();
   }
 
