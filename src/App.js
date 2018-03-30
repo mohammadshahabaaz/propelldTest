@@ -18,9 +18,9 @@ class App extends Component {
       answerOptions: [],
       answer: '',
       answersCount: {
-        Nintendo: 0,
-        Microsoft: 0,
-        Sony: 0
+        GoodFit: 0,
+        CanImprove: 0,
+        NotFit: 0
       },
       result: ''
     };
@@ -102,7 +102,7 @@ class App extends Component {
     if (result.length === 1) {
       this.setState({ result: result[0] });
     } else {
-      this.setState({ result: 'Undetermined' });
+      this.setState({ result: 'CanImprove' });
     }
   }
 
@@ -129,8 +129,8 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>React Quiz</h2>
+          {/* <img src={logo} className="App-logo" alt="logo" /> */}
+          <h2>Propelled Test</h2>
         </div>
         {this.state.result ? this.renderResult() : this.renderQuiz()}
       </div>
