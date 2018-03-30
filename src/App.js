@@ -17,13 +17,16 @@ class App extends Component {
       question: '',
       answerOptions: [],
       answer: '',
+      value:'',
       answersCount: {
         GoodFit: 0,
         CanImprove: 0,
-        NotFit: 0
+        NotFit: 0,
       },
       result: ''
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
 
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
   }
@@ -54,6 +57,14 @@ class App extends Component {
 
     return array;
   };
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
 
   handleAnswerSelected(event) {
     this.setUserAnswer(event.currentTarget.value);
@@ -132,6 +143,23 @@ class App extends Component {
           {/* <img src={logo} className="App-logo" alt="logo" /> */}
           <h2>Propelled Test</h2>
         </div>
+        <div>
+        <form onSubmit={this.handleSubmit}>
+        <label>
+          Name:
+          <input type="text" value={this.state.value} onChange={this.handleChange} />
+        </label>
+        <label>
+          Email:
+          <input type="text" value={this.state.value} onChange={this.handleChange} />
+        </label>
+        <label>
+          Phone No:
+          <input type="number" value={this.state.value} onChange={this.handleChange} />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+          </div>
         {this.state.result ? this.renderResult() : this.renderQuiz()}
       </div>
     );

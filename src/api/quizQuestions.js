@@ -1,4 +1,17 @@
-var quizQuestions = [
+const quizQuestions = [
+
+    // {
+    //     question:"Name:",
+    //     type:"text",
+    // },
+    // {
+    //     question:"Email Id",
+    //     type:"text",
+    // },
+    // {
+    //     question:"Phone Number",
+    //     type:"number",
+    // },
     {
         question: "10th Percentage(%)",
         answers: [
